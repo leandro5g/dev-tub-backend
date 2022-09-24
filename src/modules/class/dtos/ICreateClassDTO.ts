@@ -1,0 +1,3 @@
+interface ICreateClassDTO {}
+
+export { ICreateClassDTO };
