@@ -12,10 +12,10 @@
     "skipLibCheck": true,
     "allowJs": true,
     "baseUrl": ".",
+
     "paths": {
-      "@modules/*": ["modules/*"],
-      "@config/*": ["config/*"],
-      "@shared/*": ["shared/*"]
+      "@modules/*": ["./src/modules/*"],
+      "@shared/*": ["./src/shared/*"]
     },
     "experimentalDecorators": true
   }

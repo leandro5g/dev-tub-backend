@@ -14,23 +14,23 @@ class YoutubePlaylistProvider implements IPlaylistProvider {
       auth: "AIzaSyA-jrWLXTlpgMrTUaWEu4-2BhnUaD5-FD0",
     });
 
-    const response = await youtube.playlistItems.list(
-      {
-        part: "snippet,contentDetails",
-        playlistId: idPlaylist,
-        maxResults,
-      },
-      null
-    );
-
-    const idVideos = response.data?.items.map(
-      (video) => video?.contentDetails?.videoId
-    );
-
-    return youtube.videos.list({
-      id: idVideos.toString(),
-      part: "id,snippet,contentDetails",
+    const response = await youtube.playlistItems.list({
+      part: ["snippet", "contentDetails"],
+      playlistId: idPlaylist,
+      maxResults,
     });
+
+    const data = response.data?.items;
+
+    const idVideos = data!.map((video: any) => video?.contentDetails?.videoId);
+
+    return youtube.videos.list(
+      {
+        id: [idVideos.toString()],
+        part: ["id", "snippet", "contentDetails"],
+      },
+      {}
+    );
   }
 }
 

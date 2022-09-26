@@ -5,8 +5,6 @@ import { IInsertManyClassDTO } from "@modules/class/dtos/IInsertManyClassDTO";
 import { IClassRepository } from "@modules/class/repositories/IClassRepository";
 
 class ClassRepository implements IClassRepository {
-  public async create(data: ICreateClassDTO): Promise<IClass> {}
-
   public async insertMany(data: IInsertManyClassDTO[]): Promise<IClass[]> {
     const classes = await classModel.insertMany(data);
 
