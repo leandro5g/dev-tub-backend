@@ -11,9 +11,6 @@
     "watch-ts": "tsc - w",
     "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
-  "engines": {
-    "node": "16.17.0"
-  },
   "_moduleAliases": {
     "@modules": "dist/modules",
     "@shared": "dist/shared"
@@ -23,6 +20,7 @@
     "@types/mongoose": "^5.11.97",
     "@types/node": "^18.7.6",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "dotenv": "^16.0.2",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.25.2",
