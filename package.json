@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev:server": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
-    "start": "node dist/shared/infra/http/server.js",
+    "start:server": "yarn run build && node dist/shared/infra/http/server.js",
     "postinstall": "tsc",
     "build": "tsc",
     "watch-ts": "tsc - w",
